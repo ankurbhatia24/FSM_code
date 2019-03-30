@@ -1,4 +1,10 @@
-
+/*
+* Function Name:sensor_data
+* Input: None
+* Output: None
+* Logic: Reading the sensor data and mapping it for black line identification.
+* Example call : sensor_data( state )
+/
 
 /*###############################################################################################
  #################################################################################################
@@ -12,7 +18,23 @@ void sensor_data()
 
   left   = map(reading_i[0], min_left, max_left, 0, 4);        //mapping the left function in fixed limit
   center = map(reading_i[1], min_center, max_center, 0, 4);//mapping the center function in fixed limit
-  right  = map(reading_i[2], min_right, max_right, 0, 4);    //mapping the right function in fixed limit
+  right  = map(reading_i[2], min_right, max_right, 0, 4
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  );    //mapping the right function in fixed limit
 
 
   Serial.print("left= ");
@@ -26,25 +48,37 @@ void sensor_data()
   Serial.print("right= ");
   Serial.print(right);
   Serial.print("\t ");
-  i = 12;
-  //  Serial.print(" i= ");
-  //  Serial.print();
-  //  Serial.print("\t ");  
 
-  Serial.print("state= ");
-  Serial.print(state);
-  Serial.print("\t "); 
+//  i = 12;
+//    Serial.print(" i= ");
+//   
+//    Serial.print("\t ");  
 
-  Serial.print("i");
-  Serial.print(i);  
-  Serial.print("\t");
-  
+
+////
+//  Serial.print("i");
+//  Serial.print(i);  
+//  Serial.print("\t");
+//  
   Serial.print("flag_fwd= ");
   Serial.print(flag_fwd);
   Serial.print("\t"); 
   
+  Serial.print("flag_rgt= ");
+  Serial.print(flag_rgt);
+  Serial.print("\t"); 
+  
+  Serial.print("flag_lft= ");
+  Serial.print(flag_lft);
+  Serial.print("\t"); 
+//  
   Serial.print("flag_bck= ");
   Serial.print(flag_bck);
+  Serial.print("\t"); 
+  
+  
+   // Serial.print("node= ");
+  //Serial.print(flag_lft);
   Serial.print("\t \n"); 
 
 

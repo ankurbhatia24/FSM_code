@@ -32,6 +32,23 @@ void sendData4()
 {
   Wire.write(4);
 }
+void sendData5()
+{
+  Wire.write(5);
+}
+void sendData6()
+{
+  Wire.write(6);
+}
+void sendData7()
+{
+  Wire.write(7);
+}
+void sendData8()
+{
+  Wire.write(8);
+}
+
 void receiveData(int byteCount)
 {
 

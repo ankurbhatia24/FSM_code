@@ -1,4 +1,10 @@
-
+/*
+* Function Name:line_bck
+* Input: Initial state 
+* Output: None
+* Logic:implementation for backward traversal.
+* Example call : line_bck( state )
+/
 /*###############################################################################################
  #################################################################################################
  ------------------       program to follow backward line to node turn           ---------------------*/

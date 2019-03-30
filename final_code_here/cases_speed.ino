@@ -1,4 +1,8 @@
-        
+ /*
+* Function Name:return_case()
+* Input: None
+* Output: None
+* Logic:       
 
 
 /*###############################################################################################
@@ -33,21 +37,13 @@ int cases(int value)
           if (turn == 00)
           {
                sf_lft();
-                delay(700);
+                delay(1200);
                 turn++;
-//            current_time = millis();
-//            while(millis()<current_time+2000)
-//            {
-//              sf_lft();   //move the left motor forward for 30 ms 
-//              if ( current_time+1999 == millis())
-//              {
-//                turn++;
-//              }
-  //          } 
           }
           else 
           {
             sf_lft();
+
           }
         }
         else if( turn_full == 180 )
@@ -55,17 +51,8 @@ int cases(int value)
           if (turn == 00)
           {
                 hr_lft();
-                delay(700);
+                delay(1300);
                 turn++;
-//            current_time = millis();
-//            while(millis()<current_time+2000)
-//            {
-//              hr_lft();   //move the left motor forward for 30 ms 
-//              if ( current_time+1999 == millis())
-//              {
-//                turn++;
-//              }
-//            } 
           }
           else 
           {
@@ -92,20 +79,11 @@ int cases(int value)
       {
         if( turn_full == 90 )
         {
-          if (turn == 00)
+          if (turn == 11)
           {
             sf_rgt();
-            delay(700);
+            delay(1500);
             turn++;
-//            current_time = millis();
-//            while(millis()<current_time+2000)
-//            {
-//              sf_rgt();   //move the left motor forward for 30 ms 
-//              if ( current_time+1999 == millis())
-//              {
-//                turn++;
-//              }
-//            } 
           }
           else 
           {
@@ -114,20 +92,11 @@ int cases(int value)
         }
         else if( turn_full == 180 )
         {
-          if (turn == 00)
+          if (turn == 11)
           {
             hr_rgt();
-            delay(700);
+            delay(1500);
             turn++;
-//            current_time = millis();
-//            while(millis()<current_time+2000)
-//            {
-//              hr_rgt();   //move the left motor forward for 30 ms 
-//              if ( current_time+1999 == millis())
-//              {
-//                turn++;
-//              }
-//            } 
           }
           else 
           {

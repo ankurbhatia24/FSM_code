@@ -1,11 +1,18 @@
-
-
+/*
+* Function Name:fwd_node_2_node
+* Input: Initial state 
+* Output: None
+* Logic:implementation for bot traversal from one node to other.
+* Example call : fwd_node_2_node( state )
+/*
 /*###############################################################################################
  #################################################################################################
  ------------------       function for going from forward node to node    ---------------------*/
 
 
-int fwd_node_2_node(int state )
+
+
+int fwd_node_2_node(int state  )
 {
   fwd_go = 11;
   flag_fwd = 0 ;
@@ -17,13 +24,13 @@ int fwd_node_2_node(int state )
     {
 
       if ((left >= 1 && center >= 1 && right == 0) || (left == 0 && center >= 1 && right >= 1) || (left >=1  && center >= 1 && right >= 1)  )
-      { current_time = millis();
-        while((millis()<current_time+30))
+      { //current_time = millis();
+        //while((millis()<current_time+15))
         {
         flag_fwd = 1;
         state = 11;
         cases(state); 
-        }      
+      }      
       }   
     }
     else if (flag_fwd == 1)
@@ -37,7 +44,7 @@ int fwd_node_2_node(int state )
           cases(state);
 
         }     
-        else if(left >= 1 && center >= 3 && right >= 1)
+        else if(left >= 1 && center >= 1 && right >= 1)
         {
           state = 11;//fordward
           cases(state);        
@@ -48,7 +55,7 @@ int fwd_node_2_node(int state )
           cases(state);
 
         }
-        else if((left == 0 && center >= 3 && right >= 2) || (left == 0 && center == 0 && right >= 3)) 
+        else if((left == 0 && center >= 1 && right >= 1) || (left == 0 && center == 0 && right >= 1)) 
         {
           state = 01;//right
           cases(state);
@@ -77,18 +84,18 @@ int fwd_node_2_node(int state )
       }      
       else  if (state == 10)
       {
-        if(left == 0 && center >= 2 && right == 0)
+        if(left == 0 && center >= 1 && right == 0)
         {
           flag_fwd =2;
           state = 11;
           cases(state); 
         }      
-        else if(left == 0 && center >= 2 && right == 0)
+        else if(left == 0 && center >= 1 && right == 0)
         {
           state = 11;
           cases(state);
         }
-        else if((left == 0 && center >= 2 && right >= 2) || (left == 0 && center == 0 && right >= 2)) 
+        else if((left == 0 && center >= 1 && right >= 1) || (left == 0 && center == 0 && right >= 1)) 
         {
           state = 01;//right
           cases(state);
@@ -113,10 +120,23 @@ int fwd_node_2_node(int state )
 
         if (left >= 1 && center >= 2 && right >= 1) 
         {
+          flag_fwd =3; 
           state = 00;//stop
           cases(state);
-          flag_fwd =3;             
+                      
         }
+       else if(left >= 1 && center >= 1 && right == 0)
+        {
+          flag_fwd =3;
+          state = 00 ;
+          cases(state);   
+        }   
+       else if(left == 0 && center >= 1 && right >= 1) 
+        {
+          flag_fwd=3;
+          state = 00;//right
+          cases(state);
+        }        
         else if(left == 0 && center >= 1 && right == 0)
         {
           state = 11;//fordward
@@ -126,32 +146,21 @@ int fwd_node_2_node(int state )
 
         else if(left >= 1 && center == 0 && right == 0)
         {
-          while((state == 11) && (millis()<current_time+10))
-          {
+        //  while((state == 11) && (millis()<current_time+5))
+          //{
             state = 10;//left  right
             cases(state);
-          }
-        }  
-        else if(left >= 1 && center >= 1 && right == 0)
+         // }
+        }   
+        else if(left == 0 && center == 0 && right >= 1)
         {
-          flag_fwd =3;
-          state = 00 ;
-          cases(state);   
-        }
-        else if(left == 0 && center == 0 && right >= 3)
-        {
-          while((state == 11) && (millis()<current_time+10))
-          {
+          //while((state == 11) && (millis()<current_time+5))
+        //  {
             state = 01;//left
             cases(state);
-          }
+          //}
         }
-        else if(left == 0 && center >= 1 && right >= 1) 
-        {
-          flag_fwd=3;
-          state = 00;//right
-          cases(state);
-        } 
+
         else 
         {
           state=11;//fordward
@@ -161,11 +170,12 @@ int fwd_node_2_node(int state )
 
       else if (state == 01)
       {
-        if (left >= 1 && center >= 1 && right >= 1) 
+        if ((left >= 1 && center >= 1 && right >= 1) || (left >= 1 && center >= 1 && right == 0) || (left >= 0 && center >= 1 && right >= 1))
         {
+           flag_fwd =3;
           state = 00;//stop
           cases(state);
-          flag_fwd =3;
+         
         }
         else  if(left == 0 && center >= 1 && right == 0)
         {
@@ -181,18 +191,18 @@ int fwd_node_2_node(int state )
 
       else  if (state == 10)
       {
-        if (left >= 1 && center >= 1 && right >= 1) 
+        if ((left >= 1 && center >= 1 && right >= 1) || (left >= 1 && center >= 1 && right == 0) || (left >= 0 && center >= 1 && right >= 1))
         {
           flag_fwd =3;
           state = 00;//stop
           cases(state);            
         }             
-        else if(left == 0 && center >= 2 && right == 0)
+        else if(left == 0 && center >= 1 && right == 0)
         {
           state = 11;
           cases(state);
         }
-        else if (left == 0 && center == 0 && right >= 2)
+        else if (left == 0 && center == 0 && right >= 1)
         {
           state = 01;//right
           cases(state);

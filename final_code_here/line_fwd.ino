@@ -3,7 +3,7 @@
 /*###############################################################################################
  #################################################################################################
  ------------------       program to follow forward line to node turn           ---------------------*/
-int line_fwd(int state)
+int line_fwd(int state )
 {
   fwd_go = 11;
   flag_fwd = 0;
@@ -32,34 +32,34 @@ int line_fwd(int state)
         state = 00;//stop
         cases(state);
       }
-
-      else if(left >= 1 && center == 0 && right == 0)
-      {
-        while((state == 11) && (millis()<current_time+10))
-        {
-          state = 10;//right
-          cases(state);
-        }
-      }  
       else if(left >= 1 && center >= 1 && right == 0)
       {
         flag_fwd = 9;
         state = 00 ;
         cases(state);   
       }
-      else if(left == 0 && center == 0 && right >= 3)
-      {
-        while((state == 11) && (millis()<current_time+30))
-        {
-          state = 01;//right
-          cases(state);
-        }
-      }
       else if(left == 0 && center >= 1 && right >= 1) 
       {
         flag_fwd = 9 ;
         state = 00;//left
         cases(state);
+      }
+      else if(left >= 1 && center == 0 && right == 0)
+      {
+        //while((state == 11) && (millis()<current_time+5))
+        //{
+          state = 10;//right
+          cases(state);
+        //}
+      }  
+
+      else if(left == 0 && center == 0 && right >= 3)
+      {
+       // while((state == 11) && (millis()<current_time+5))
+        //{
+          state = 01;//right
+          cases(state);
+       // }
       } 
       else 
       {
@@ -70,7 +70,7 @@ int line_fwd(int state)
 
     else if (state == 01)
     {
-      if (left >= 1 && center >= 1 && right >= 1) 
+      if ((left >= 1 && center >= 1 && right >= 1) || (left >= 1 && center >= 1 && right == 0) || (left >= 0 && center >= 1 && right >= 1))
       {
         flag_fwd = 9;
         state = 00;//stop
@@ -90,7 +90,7 @@ int line_fwd(int state)
 
     else  if (state == 10)
     {
-      if (left >= 1 && center >= 1 && right >= 1) 
+      if ((left >= 1 && center >= 1 && right >= 1) || (left >= 1 && center >= 1 && right == 0) || (left >= 0 && center >= 1 && right >= 1)) 
       {
         flag_fwd = 9;
         state = 00;//stop

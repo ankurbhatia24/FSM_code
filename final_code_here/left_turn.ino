@@ -1,4 +1,10 @@
-
+/*
+* Function Name:left_turn
+* Input: Initial state 
+* Output: None
+* Logic: implementation for left turn at node.
+* Example call : left_turn( state )
+/*
 /*###############################################################################################
  #################################################################################################
  ------------------       program for taking left turn           ---------------------*/
@@ -10,6 +16,7 @@ int  left_turn(int state)
   flag_lft = 0;
   while(flag_lft != 9)
   { 
+    sensor_data();
     
 //    i=10;
 //    
@@ -48,20 +55,20 @@ int  left_turn(int state)
 //      } 
 //    }     
 
-    if ((state == 00 || state == 10  ) && flag_lft == 0   )
-    { sensor_data();
+    if ((state == 00)  && flag_lft == 0 )
+    { 
     
      if ((left >= 1 && center >= 2 && right >= 1) || (left >= 1 && center >= 2 && right >= 0) || (left >= 0 && center >= 2 && right >= 1))
-      {i=100;
-        flag_lft++;
+      {
+        flag_lft=5;
         turn=11;
         state =10;//right turn
         cases(state);
         
       }
     } 
-    else if(state ==10 )
-    {sensor_data();
+    else if(state ==10   && flag_lft == 5 )
+    {
       if(left == 0 && center >= 1 && right == 0)
       {
         flag_lft=9;
